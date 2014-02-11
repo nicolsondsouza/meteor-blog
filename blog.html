@@ -1,0 +1,83 @@
+<head>
+  <title>Chase Happiness</title>
+  <script src="include/jquery-1.8.3.min.js" type="text/javascript"> </script>
+  <script src="include/jquery.address-1.5.js" type="text/javascript"> </script>
+</head>
+<body>
+	<div id='top'> </div>
+	{{> main}}
+	{{> allarticle}}
+    {{> article}}
+    {{> editarticle}}  	
+<footer> 
+	<div id='top'> <a href='#top'> BACK TO TOP </a> </div>
+    <div id='previous-next'><a id="previous" href='javascript:void(0)'> Previous </a> / <a id="next" href='javascript:void(0)'> Next </a> </div> 
+    <div id='social'> <a href='javascript:void(0)'> TWITTER </a> / <a href='javascript:void(0)'> DRIBBBLE </a> / <a href='javascript:void(0)'> RSS </a> </div>
+</footer>
+</body>
+
+<template name="main"> 
+  <div id='scenario'> 
+  	<div id='logo'><b> DG</b> </div>
+    <div id='article-logo'> <a id='article-link' href='javascript:void(0)'style="color: white;"> Article </a>/ <a href='javascript:void(0)' style="color: white;"> About </a> </div>
+  	<div id='happiness-logo'> <div id='date'> FEBRUARY 22, 2012 </div> <b> CHASE HAPPINESS </b> <div id='subtitle'> FOLLOW YOUR DREAMS, NEVER SETTLE AND DO WHAT MAKES YOU HAPPY. </div></div>
+    <br/> <br/> <br/> <br/> <br/> <hr/>   	
+  </div>
+  <div id='addition'> 
+  	
+  </div>
+</template>
+
+<template name='allarticle'>	
+	<div id="article-list"> 
+    	<div id='header'> 
+        	<div id='logo'><b> DG </b> </div>
+            <div id='article-logo'>  <a id="add-link" href='javascript:void(0)'> Add Article </a> / <a id='article-link' href='javascript:void(0)'> Article </a>/ <a href='#'> About </a> </div>
+        </div>
+        <hr/>
+  		{{#each objecting}}
+ 			{{> onearticle}}
+        {{/each}}
+ 	 </div>
+</template>
+
+<template name='article'> 
+	<div id="article">
+    	<div id='header'> 
+        	<div id='logo'><b> DG </b> </div>
+            <div id='article-logo'><!--<a id='edit-logo' href='javascript:void(0)'> Edit Article </a> / --><a id='article-link' href='javascript:void(0)'> Article </a>/ <a href='#'> About </a> </div>
+        </div>
+        <hr/>
+    	 <div id="article-date"> JULY 15, 2012 </div>
+    	<div id="article-titles"> HOSTED ON GITHUB </div> 
+        <div id="article-subtitle"> WHY AND HOW I NOW HOST ALL MY PROJECTS ON GITHUB </div>   <br/>  <br/> <br/> <br/>  
+        <div id="article-detailed"> Last week I popped open an outdated version of Filezilla, looked up FTP credentials </div>
+        <br/> <hr/>
+    </div>
+</template> 
+
+<template name="onearticle"> 
+	<div id='each-article'> 
+    	<div id='article-title'> <b> {{Title}} </b> <br/> <p> {{Dates}} </p> </div> 
+    	<div id='article-details'> {{Mini}} </div>
+    </div>
+    <hr>
+</template>
+
+<template name='editarticle'> 
+	<div id='edit-article'> 
+    	<div id='header'> 
+        	<div id='logo'><b> DG </b> </div>
+            <div id='article-logo'><a id='article-link' href='javascript:void(0)'> Article </a>/ <a href='#'> About </a> </div>
+        </div>
+        <div id='edit'> 
+        	<div id='edit-title'> Title : <br/> <input id="text-title" type="text"/> </div>
+            <div id='edit-date'> Date :  <br/> <input id="text-date" type="text"/> </div>
+            <div id='edit-subtitle'> Tag Line : <br/> <input id="text-subtitle" type="text"/>  </div>
+            <div id='edit-mini'> Short Article :<br/>  <textarea   id="text-mini" rows="5" cols="100"/> </div>
+            <div id='edit-detailed'> Article : <br/> <textarea   id="text-detailed" rows="20" cols="100"/> </div>
+            <input id="saveButton" type="button" value="Save"/> 
+        </div>
+    </div>
+</template>
+
